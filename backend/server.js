@@ -11,7 +11,10 @@ const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-
+// Default route to handle the root URL
+app.get("/", (req, res) => {
+    res.send("Welcome to the Email Sending Service API!");
+  });
 
 app.post("/send-email", async (req, res) => {
     const { name, email, message } = req.body;
